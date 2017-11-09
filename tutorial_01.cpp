@@ -1,9 +1,8 @@
-//Tutorial 1: Hello World!
+// Tutorial 1: Hello World!
+// Compilation: g++ -lGLUT tutorial_01.cpp -o tut1.out
+// (-lGLUT so linker will link the executable to the compiled GLUT binary)
 
-// Compile command:
-// g++ -framework GLUT tutorial_01.cpp -o tut1.out
-
-#include <GL/freeglut.h>
+#include <GL/freeglut.h> // Need the include directories for header files
 
 const int window_height = 640;
 const int window_width = 640;
