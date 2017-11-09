@@ -104,12 +104,12 @@ Provides commonly used functions on top of OpenGL.
     - zFar - far clipping plane
 - __gluLookAt__
   - For setting the viewing transformation (view matrix)
-  - 3 sets of arguments
+  - 3 sets of arguments:
     - Eye x,y,z - location of the camera (3D point)
-    - Center/Reference x,y,z - where camera is looking (3D point)
-    - Up x,y,z - rotation of the camera (3D vector)
-  - You want to move forward - _What is the direction vector (forward vector) of the camera???_
-  - You want to move right _What is the vector pointing to the right of the camera???_
+    - Center/Reference x,y,z - where camera is looking (3D point)
+    - Up x,y,z - rotation of the camera (3D vector)
+  - You want to move forward --> _What is the direction vector (forward vector) of the camera???_
+  - You want to move right --> _What is the vector pointing to the right of the camera???_
 - __glRotatef__
   - Rotates the current object angle degrees around the vector x,y,z 
 - __glTranslatef__
