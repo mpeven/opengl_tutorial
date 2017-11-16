@@ -1,4 +1,4 @@
-# OpenGL Tutorial
+# OpenGL Introduction
 
 ---
 
@@ -15,7 +15,7 @@ OpenGL is an API for computer graphics.
   - Libraries are often built on top of OpenGL
 - State machine
   - The various API calls change the OpenGL state, query some part of that state, or cause OpenGL to use its current state to render something
- 
+
 ### GLUT (OpenGL Utility Toolkit) or FreeGLUT
 
 API for creating a display window and using keyboard/mouse interations.
@@ -32,7 +32,7 @@ Provides commonly used functions on top of OpenGL.
 - Higher level shape drawing functions
   - gluCylinder
   - gluSphere
-  
+
 ### Other
 
 - GLEW - OpenGL Extension Wrangler
@@ -57,7 +57,7 @@ Provides commonly used functions on top of OpenGL.
   - Sets a callback function for the window. GLUT determines when the display callback should be triggered based on the window's redisplay state (can set explicitly by calling glutPostRedisplay).
 - glutMainLoop
   - Starts the GLUT event processing loop, all registered callbacks will now get called.
- 
+
 ---
 
 ## Tutorial 2 - First Rendering
@@ -111,7 +111,7 @@ Provides commonly used functions on top of OpenGL.
   - You want to move forward - _What is the direction vector (forward vector) of the camera???_
   - You want to move right _What is the vector pointing to the right of the camera???_
 - __glRotatef__
-  - Rotates the current object angle degrees around the vector x,y,z 
+  - Rotates the current object angle degrees around the vector x,y,z
 - __glTranslatef__
   - Translates in the given x,y,z direction
 
@@ -124,8 +124,8 @@ Provides commonly used functions on top of OpenGL.
 - glPopMatrix
   - Pops the current matrix stack, replacing the current matrix with the one below it
 - _Explanation:_
-  - You are applying transformations to the modelview matrix (with glTranslate or glRotate) and then you are in some good reference position. You can push a duplicate matrix onto the stack, perform a transformation on that, and then pop it off and you are back at that reference position. 
-  - This avoids having to either make backwards transformations to get back to your reference position or making the whole original sequence of transformations again. 
+  - You are applying transformations to the modelview matrix (with glTranslate or glRotate) and then you are in some good reference position. You can push a duplicate matrix onto the stack, perform a transformation on that, and then pop it off and you are back at that reference position.
+  - This avoids having to either make backwards transformations to get back to your reference position or making the whole original sequence of transformations again.
 
 ---
 
@@ -161,14 +161,58 @@ __Not used in Assignment 3 anymore__
 
 ## Tutorial 8 - Shading
 
+- glShadeModel
+    - GL_SMOOTH: interpolate colors across vertices
+    - GL_FLAT: solid color over the whole polygon
+- glNormal
+    - You have to specify the normals at each vertex
+    - This means you have to perform the calculation (derivatives)
+
 ---
 
 ## Tutorial 9 - Texture
+
+- glGenTextures
+    - Create a texture object
+- glBindTexture
+    - Name a texture object
+- glTexImage2D
+    - Set the texture map
+    - Parameters:
+        - Target texture type
+        - Level of detail (mipmap reduction)
+        - Number of color components
+        - Size (width, height)
+        - Border
+        - Format, data type of the pixels
+        - Pointer to the image data in memory (pixels)
+- glEnable(GL_TEXTURE_2D)
+    - Enable 2D texture mapping
+- glTexEnvi
+    - How the final color of a fragment is chosen
+    - Decal: texture painted on top of the surface (don't worry about original color)
+    - Modulate: multiplies the original color with the texture (specular highlights will show through)
+    - Others...
+- glTexParameteri
+    - How to wrap the texture if the image isn't the same size as the fragment
+- glTexCoord2d
+    - Sets the texture coordinates on the texture
+    - Then, the next specified vertex coordinates will have those coordinates
 
 ---
 
 ## Tutorial 10 - Depth Test
 
+- GL_DEPTH_BUFFER_BIT
+    - Stores the distance from the view plane
+- glEnable(GL_DEPTH_TEST)
+    - When filling in pixels, comparison is done with the existing depth value at the pixel being drawn
+
 ---
 
 ## Tutorial 11 - Transparency
+
+- glEnable(GL_BLEND)
+    - Enable blending to blend a pixel with an alpha value with the pixel already drawn at that location
+- glBlendFunc
+    - Specifies how the source (current pixel to draw) should be computed and how the destination (existing pixel) should be computed

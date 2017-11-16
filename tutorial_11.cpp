@@ -1,4 +1,5 @@
 //Tutorial 11: Transparency
+// Compilation: g++ -framework OpenGL -lGLUT -w tutorial_11.cpp -o tut11.out
 
 #include <GL/freeglut.h>
 #include <stdio.h>

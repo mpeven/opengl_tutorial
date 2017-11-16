@@ -22,7 +22,9 @@ void RenderLoop()
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
-	gluLookAt(0.f, 0.f, 1.f, 0.f, 0.f, -1.f, 0.f, 1.f, 0.f); //Default camera configuration : camera is in the origin and looking in the -z direction.
+	gluLookAt(0.f, 0.f, 1.f,
+			  0.f, 0.f, -1.f,
+			  0.f, 1.f, 0.f); //Default camera configuration : camera is in the origin and looking in the -z direction.
 	//gluLookAt(1.f, 0.f, 1.f, 1.f, 0.f, 0.f, 0.f, 1.f, 0.f);
 
 	//glRotatef(90, 0.f, 0.f, 1.f);

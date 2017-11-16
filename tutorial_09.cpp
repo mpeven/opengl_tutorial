@@ -1,4 +1,5 @@
 //Tutorial 9: Texture
+// Compilation: g++ -framework OpenGL -lGLUT -w tutorial_09.cpp -o tut9.out
 
 #include <GL/freeglut.h>
 #include <stdio.h>

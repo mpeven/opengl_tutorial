@@ -1,4 +1,5 @@
 //Tutorial 8: Shading
+// Compilation: g++ -framework OpenGL -lGLUT -w tutorial_08.cpp -o tut8.out
 #include <GL/freeglut.h>
 #include <stdio.h>
 const int window_height = 640;
@@ -31,7 +32,7 @@ void RenderLoop()
 
 	glEnable(GL_NORMALIZE);
 	glShadeModel(GL_SMOOTH);
-	//glShadeModel(GL_FLAT);
+	// glShadeModel(GL_FLAT);
 	glBegin(GL_TRIANGLES);
 	glNormal3f(0.f, 0.f, -1.f);
 	glVertex3f(0.0f, 0.0f, 0.0f);
@@ -45,14 +46,14 @@ void RenderLoop()
 
 	glDisable(GL_LIGHTING);
 
-	//GLfloat m[16];
-	//glGetFloatv(GL_PROJECTION_MATRIX, m);
-	//printf("\n Projection Matrix : \n");
-	//for (int i = 0; i < 4; i++)	printf(" %f %f %f %f \n", m[i], m[4 + i], m[8 + i], m[12 + i]);
+	// GLfloat m[16];
+	// glGetFloatv(GL_PROJECTION_MATRIX, m);
+	// printf("\n Projection Matrix : \n");
+	// for (int i = 0; i < 4; i++)	printf(" %f %f %f %f \n", m[i], m[4 + i], m[8 + i], m[12 + i]);
 
-	//glGetFloatv(GL_MODELVIEW_MATRIX, m);
-	//printf("\n Model View Matrix : \n");
-	//for (int i = 0; i < 4; i++)	printf(" %f %f %f %f \n", m[i], m[4 + i], m[8 + i], m[12 + i]);
+	// glGetFloatv(GL_MODELVIEW_MATRIX, m);
+	// printf("\n Model View Matrix : \n");
+	// for (int i = 0; i < 4; i++)	printf(" %f %f %f %f \n", m[i], m[4 + i], m[8 + i], m[12 + i]);
 
 	glutSwapBuffers();
 }

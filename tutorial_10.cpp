@@ -1,4 +1,5 @@
 //Tutorial 10: Depth Test
+// Compilation: g++ -framework OpenGL -lGLUT -w tutorial_10.cpp -o tut10.out
 
 #include <GL/freeglut.h>
 #include <stdio.h>
